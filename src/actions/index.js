@@ -1,4 +1,11 @@
 import jsonPlaceHolder from "../apis/jsonPlaceholder";
+import _ from "lodash";
+
+export const fetchPostsAndUser = () => async (dispatch) => {
+  console.log("About to fetch");
+  await dispatch(fetchPosts());
+  console.log("Fetched");
+};
 
 export const fetchPosts = () => async (dispatch) => {
   const response = await jsonPlaceHolder.get("/posts");
